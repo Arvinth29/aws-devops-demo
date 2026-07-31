@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
                 git branch: 'main',
@@ -10,9 +9,9 @@ pipeline {
             }
         }
 
-        stage('Run Python Calculator') {
+        stage('Check Python') {
             steps {
-                bat 'python calculator.py'
+                sh 'python3 --version || python --version'
             }
         }
     }
