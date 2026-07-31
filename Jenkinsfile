@@ -9,9 +9,9 @@ pipeline {
             }
         }
 
-        stage('Check Python') {
+        stage('Run Calculator') {
             steps {
-                sh 'python3 --version || python --version'
+                sh 'python3 calculator.py'
             }
         }
     }
