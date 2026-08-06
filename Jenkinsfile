@@ -1,18 +1,9 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/Arvinth29/aws-devops-demo.git'
-            }
-        }
-
-        stage('Run Calculator') {
-            steps {
-                sh 'python3 calculator.py'
-            }
-        }
+stage('Deploy') {
+    steps {
+        sh '''
+        mkdir -p /home/ubuntu/deploy
+        cp calculator.py /home/ubuntu/deploy/
+        echo "Deployment completed."
+        '''
     }
 }
