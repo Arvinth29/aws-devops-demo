@@ -21,15 +21,16 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
+     stage('Deploy') {
+             steps {
                 sh '''
-                      mkdir -p deploy
-                      cp calculator.py deploy/
-                      echo "Deployment completed."
-                      ls -l deploy
+                mkdir -p /home/ubuntu/deploy
+                cp calculator.py /home/ubuntu/deploy/
+                cp test_calculator.py /home/ubuntu/deploy/
+                echo "Deployment completed."
+                ls -l /home/ubuntu/deploy
         '''
     }
-        }
+}
     }
 }
