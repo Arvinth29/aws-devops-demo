@@ -11,7 +11,7 @@ def divide(a, b):
     return a / b
 
 num1 = 10
-num2 = 15
+num2 = 19
 
 print("Addition:", add(num1, num2))
 print("Subtraction:", subtract(num1, num2))
